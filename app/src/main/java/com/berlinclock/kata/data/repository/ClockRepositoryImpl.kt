@@ -18,7 +18,22 @@ class ClockRepositoryImpl():ClockRepository {
         val secondsLight = getSecondsLightState(calendar[Calendar.SECOND])
         val fiveHoursLightList = getFiveHoursLightState(calendar[Calendar.HOUR_OF_DAY])
         val singleHoursLightList = getSingleHoursLightState(calendar[Calendar.HOUR_OF_DAY])
-        return ClockState(time = time, secondsLight = secondsLight, fiveHoursLight = fiveHoursLightList, singleHoursLight = singleHoursLightList)
+        val fiveMinutesLightList = getFiveMinutesLightState(calendar[Calendar.MINUTE])
+        return ClockState(time = time, secondsLight = secondsLight, fiveHoursLight = fiveHoursLightList, singleHoursLight = singleHoursLightList, fiveMinutesLight = fiveMinutesLightList)
+    }
+
+    private fun getFiveMinutesLightState(minutes: Int): ArrayList<Light> {
+        val minutesNumber = (minutes/5)-1
+        val minutesLight: ArrayList<Light> = arrayListOf(Light.GREY, Light.GREY,Light.GREY,Light.GREY,Light.GREY, Light.GREY,Light.GREY,Light.GREY,Light.GREY, Light.GREY,Light.GREY)
+        for (i in 0..minutesNumber) {
+            val j = i+1
+            val color = if (j % 3 == 0)
+                Light.RED
+            else
+                Light.YELLOW
+            minutesLight.set(i,color)
+        }
+        return minutesLight
     }
 
     private fun getSingleHoursLightState(hours: Int): ArrayList<Light> {
