@@ -31,4 +31,12 @@ class CityRepositoryTest {
         val clockState = clockRepository.getClockState(calendar.time)
         Assert.assertEquals(Light.RED, clockState.secondsLight)
     }
+
+    @Test
+    fun `test seconds clock for odd number`() = runTest {
+        val calendar = Calendar.getInstance()
+        calendar.set(Calendar.SECOND, 3)
+        val clockState = clockRepository.getClockState(calendar.time)
+        Assert.assertEquals(Light.GREY, clockState.secondsLight)
+    }
 }
