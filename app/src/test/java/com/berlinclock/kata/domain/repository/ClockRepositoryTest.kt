@@ -75,4 +75,13 @@ class CityRepositoryTest {
         val clockState = clockRepository.getClockState(calendar.time)
         Assert.assertEquals(expected, clockState.singleHoursLight)
     }
+
+    @Test
+    fun `test five minutes clock with yellow lights`() = runTest {
+        val calendar = Calendar.getInstance()
+        calendar.set(Calendar.MINUTE, 14)
+        val expected = arrayListOf(Light.YELLOW,Light.YELLOW,Light.GREY,Light.GREY,Light.GREY,Light.GREY,Light.GREY,Light.GREY,Light.GREY,Light.GREY,Light.GREY)
+        val clockState = clockRepository.getClockState(calendar.time)
+        Assert.assertEquals(expected, clockState.fiveMinutesLight)
+    }
 }
