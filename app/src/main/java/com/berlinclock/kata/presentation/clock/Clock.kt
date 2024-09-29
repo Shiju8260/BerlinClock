@@ -35,7 +35,8 @@ fun Clock(viewModel: ClockViewModel = hiltViewModel(), modifier: Modifier) {
         modifier = modifier.fillMaxSize().padding(16.dp)
     ) {
         SecondsLight(state.secondsLight)
-        FiveHoursLight(state.fiveHoursLight)
+        LightsList(state.fiveHoursLight)
+        LightsList(state.singleHoursLight)
         Text(
             text = state.time?:"",
             fontSize = 24.sp
@@ -56,7 +57,7 @@ fun SecondsLight(secondsLight: Light?=null) {
 }
 
 @Composable
-fun FiveHoursLight(lights: ArrayList<Light>?=null) {
+fun LightsList(lights: ArrayList<Light>?=null) {
     Row (modifier = Modifier.fillMaxWidth().padding(bottom = 12.dp)){
         lights?.forEach { light ->
             LightsUi(light.color,Modifier.fillMaxWidth().weight(1f))
