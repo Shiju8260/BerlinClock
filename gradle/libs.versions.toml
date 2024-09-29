@@ -13,6 +13,7 @@ hilt = "2.48"
 mockitoCore = "4.5.1"
 mockitoKotlin = "4.1.0"
 mockitoInline = "3.11.2"
+androidxHilt = "1.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -35,6 +36,7 @@ dagger-hilt-kapt = { group = "com.google.dagger", name = "hilt-android-compiler"
 mockito-core-testing = { group = "org.mockito", name = "mockito-core", version.ref = "mockitoCore" }
 mockito-kotlin-testing = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockitoKotlin" }
 mockito-inline = { group = "org.mockito", name = "mockito-inline", version.ref = "mockitoInline" }
+androidx-hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHilt" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
