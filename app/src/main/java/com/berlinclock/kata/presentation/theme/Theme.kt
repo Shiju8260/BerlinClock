@@ -1,4 +1,4 @@
-package com.berlinclock.kata.ui.theme
+package com.berlinclock.kata.presentation.theme
 
 import android.app.Activity
 import android.os.Build

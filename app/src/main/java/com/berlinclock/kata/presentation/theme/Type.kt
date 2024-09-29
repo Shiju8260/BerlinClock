@@ -1,4 +1,4 @@
-package com.berlinclock.kata.ui.theme
+package com.berlinclock.kata.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
