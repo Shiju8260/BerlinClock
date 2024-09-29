@@ -71,6 +71,7 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.hilt.kapt)
+    testImplementation(libs.bundles.mockito.testing)
 }
 
 // Allow references to generated code

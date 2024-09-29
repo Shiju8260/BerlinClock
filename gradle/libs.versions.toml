@@ -10,6 +10,9 @@ activityCompose = "1.9.2"
 composeBom = "2024.04.01"
 kotlinxcoroutinesTest = "1.8.1"
 hilt = "2.48"
+mockitoCore = "4.5.1"
+mockitoKotlin = "4.1.0"
+mockitoInline = "3.11.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -29,10 +32,16 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxcoroutinesTest" }
 dagger-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 dagger-hilt-kapt = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+mockito-core-testing = { group = "org.mockito", name = "mockito-core", version.ref = "mockitoCore" }
+mockito-kotlin-testing = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockitoKotlin" }
+mockito-inline = { group = "org.mockito", name = "mockito-inline", version.ref = "mockitoInline" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 jetbrains-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+
+[bundles]
+mockito-testing = ["mockito-core-testing", "mockito-kotlin-testing", "mockito-inline"]
 
