@@ -14,7 +14,7 @@ class ClockTest {
     @Preview(showBackground = true)
     @Composable
     fun ClockPreview() {
-       val state =  ClockState(time="11:51:19", secondsLight= Light.GREY, fiveHoursLight= arrayListOf(Light.RED, Light.RED, Light.GREY, Light.GREY), singleHoursLight=arrayListOf(Light.RED, Light.GREY, Light.GREY, Light.GREY))
+       val state =  ClockState(time="11:51:19", secondsLight= Light.GREY, fiveHoursLight= arrayListOf(Light.RED, Light.RED, Light.GREY, Light.GREY), singleHoursLight=arrayListOf(Light.RED, Light.GREY, Light.GREY, Light.GREY), fiveMinutesLight= arrayListOf(Light.YELLOW, Light.YELLOW, Light.RED, Light.YELLOW, Light.YELLOW, Light.RED, Light.YELLOW, Light.YELLOW, Light.RED, Light.YELLOW, Light.GREY), singleMinutesLight= arrayListOf(Light.YELLOW, Light.GREY, Light.GREY, Light.GREY))
         MaterialTheme {
             ClockContent(state= state,modifier = Modifier)
         }
