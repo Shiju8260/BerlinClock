@@ -24,11 +24,17 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.berlinclock.kata.domain.models.ClockState
 import com.berlinclock.kata.domain.models.Light
 
 @Composable
 fun Clock(viewModel: ClockViewModel = hiltViewModel(), modifier: Modifier) {
     val state by viewModel.state.collectAsState()
+    ClockContent(state,modifier)
+}
+
+@Composable
+fun ClockContent(state: ClockState, modifier: Modifier) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
