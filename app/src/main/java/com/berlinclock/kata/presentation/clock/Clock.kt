@@ -43,6 +43,8 @@ fun ClockContent(state: ClockState, modifier: Modifier) {
         SecondsLight(state.secondsLight)
         LightsList(state.fiveHoursLight)
         LightsList(state.singleHoursLight)
+        LightsList(state.fiveMinutesLight)
+        LightsList(state.singleMinutesLight)
         Text(
             text = state.time?:"",
             fontSize = 24.sp
